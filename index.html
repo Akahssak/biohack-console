@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Committee Access — BioHack 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0f1d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23f0b429'/%3E%3Ctext x='50' y='70' font-size='58' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%232a1d00'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell">
+    <div class="brand">
+      <div class="brand-mark" style="background:linear-gradient(135deg,#f0b429,#e2740b);color:#2a1d00">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <div class="brand-eyebrow" style="color:var(--amber)">Restricted</div>
+        <div class="brand-name">Organising Committee Console</div>
+        <div class="brand-sub">BioHack 2026 · NIBT</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="auth-screen">
+  <div class="auth-box">
+    <div class="auth-mark"><i class="fa-solid fa-user-shield"></i></div>
+
+    <div class="auth-head">
+      <h2>Committee sign-in</h2>
+      <p>Authorised members only. Access is granted per-account by the event administrator.</p>
+    </div>
+
+    <div class="card">
+      <form id="staff-form" novalidate>
+        <div class="field">
+          <label for="staff-email">Committee email</label>
+          <input class="input" type="email" id="staff-email" required autocomplete="email"
+                 placeholder="you@nibt.org">
+        </div>
+
+        <div class="field">
+          <label for="staff-password">Password</label>
+          <input class="input" type="password" id="staff-password" required
+                 autocomplete="current-password" placeholder="••••••••">
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap">
+          <label class="checkline">
+            <input type="checkbox" id="staff-remember">
+            <span>Keep me signed in</span>
+          </label>
+          <button type="button" class="link-muted" id="staff-reset">Forgot password?</button>
+        </div>
+
+        <button class="btn btn-amber btn-block" type="submit" id="staff-submit">
+          <i class="fa-solid fa-unlock-keyhole"></i>Verify &amp; continue
+        </button>
+      </form>
+
+      <div class="notice" style="margin-top:20px">
+        <i class="fa-solid fa-lock"></i>
+        <span>Credentials are verified by the identity provider, then checked against the
+        authorised-members register. Sessions without a committee record are rejected and signed out
+        automatically.</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <span>© 2026 National Institute of Bio-Engineering &amp; Technology</span>
+    <span class="mono" id="portal-link-wrap"><a href="#" id="portal-link" class="hidden">Participant portal</a></span>
+  </div>
+</footer>
+
+<div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+<script src="js/firebase-config.js"></script>
+<script type="module" src="js/signin.js"></script>
+</body>
+</html>
